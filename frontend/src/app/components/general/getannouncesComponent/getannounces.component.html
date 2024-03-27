@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AnnouncesDocument</title>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="container">
+                
+                <div class="row">
+                    <a href="/getannounce/:{{announce._id}}" *ngFor="let announce of announcesArray;" class="col-md-3">
+                        <div class="announceCard">
+                            <div class="shape">
+                                <img src = {{announce.photosPaths[0]}}>
+                                <div class="descriptionInfo">
+                                    <div>
+                                        
+                                        <mat-icon class="infoIcons"><strong>location_on</strong></mat-icon>
+                                        <p><strong>{{ announce.ubication }}</strong></p>
+                                       
+                                        <mat-icon class="infoIcons">phone</mat-icon>
+                                        <p><strong>{{ announce.phone }}</strong></p>
+                                        
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <p class="title">{{ announce.title }}</p>
+                                    <p class="price"><strong>{{ announce.price }} DA</strong></p>
+                                </div>
+                            </div>     
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        
+            
+           <!-- <a href ="/postannounce" class="btnStandard" (click)="showMore();">Show More</a> -->
+        </div>
+        
+    </body>
+
+
+</html>
+
+

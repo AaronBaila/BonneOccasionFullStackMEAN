@@ -1,0 +1,137 @@
+.container-fluid{
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+}
+
+/* *** CATEGORIAS *** */
+.categoriesContainer{
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+}
+  
+.carousel{
+    height: 300px;
+    width: 100%;
+    margin-right: 100px;
+}
+  
+.carouselContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: fit-content;
+}
+
+.divButton{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    width: 280px;
+    height: fit-content;
+    border: 2px solid #004E64;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-left: 75px;
+}
+  
+.divButton h2{
+    font-family: 'Rubik', sans-serif;
+    margin:0;
+    padding-top: 30px;
+}
+  
+.divButton:hover{
+    border: 3px solid #00A5CF;
+    transform: scale(1.4);
+    box-shadow: 0 0 10px rgba(0, 165, 207, 0.5);
+}
+
+.categoriesButton{
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Hereda el color del texto del elemento padre */
+    cursor: pointer; /* Cambia el cursor al pasar por encima del enlace */
+}
+  
+.iconsButton{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 13px;
+    padding-left: 7px;
+}
+
+.decorIcons{
+    padding-left: 5px;
+    padding-right: 30px;
+    margin: 20px;
+    width: 30px;
+    transform: scale(1.8);
+    margin-right: 40px;
+}
+
+.whiteSpaceForCarousel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 90px;
+    padding-top: 4px;
+}
+
+.whiteSpaceForCarousel mat-icon{
+    transform: scale(2.5);
+}
+  
+.whiteSpaceForCarousel2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 90px;
+}
+  
+.whiteSpaceForCarousel2 mat-icon{
+    transform: scale(2.5);
+}
+
+.buttonCategoriesContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 35px;
+}
+  
+.btnCategories {
+    font-family: 'Rubik', sans-serif;
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    background: #25A18E;
+    box-shadow: 0 0 10px rgba(37, 161, 142, 0.8); /* Sutil sombra */
+    overflow: hidden;
+    transition: background 0.3s, box-shadow 0.3s;
+    width: 500px;
+}
+    
+.btnCategories:hover {
+    background: #007999; /* Cambia el color de fondo al pasar el ratón */
+    box-shadow: 0 0 20px rgba(0, 121, 153, 2); /* Aumenta la intensidad de la sombra */
+}
+

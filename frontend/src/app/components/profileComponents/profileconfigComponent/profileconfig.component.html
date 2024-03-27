@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ProfileEditDocument</title>
+    </head>
+
+    <body>
+
+        <div class="container-fluid">
+            <form (submit) ="updateData(name, email, phone)"> <!-- Con submit y el uso de un boton dentro del formulario, nos permite hacer uso de una funcion y pasarle los inputs del formulario-->
+                
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <input type="text" class="input-normal" name="title" value ="{{resUserLogged[0].name}}" placeholder="Name"  maxlength="70" required #name>
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="text" class="input-normal" name="user_mail" value ="{{resUserLogged[0].email}}" placeholder="Email" maxlength="60" #email>
+                    </div>
+            
+                    <div class="col-md-4">
+                        <input type="text" class="input-normal" name="phone" value ="" value="{{resUserLogged[0].phone}}" placeholder="Phone" maxlength="15" required #phone>
+                    </div>
+
+                    <div class="col-md-12">
+                        <button class="btn btn-primary btn-block" style="width: 100%;">EDIT</button>
+                    </div>
+                </div>
+            </form>
+
+            <br>
+
+            <div class="col-md-12">
+                <button class="btn btn-primary btn-block" style="width: 100%;"  (click)="deleteUser()">DELETE</button>
+            </div>   
+        </div>        
+    </body>
+</html>
+

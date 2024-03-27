@@ -1,0 +1,35 @@
+.container-fluid{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: blue;
+    padding-top: 3%;
+}
+
+form{
+    background-color: blanchedalmond;
+    width: 60%;
+    height: 65%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 3%;
+}
+
+.input-normal{
+    text-align: center;
+    margin-top: 4%;
+    width: 100%;
+}
+
+.btn{
+    margin-top: 10%;
+}
+
+.container-upload{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3%;
+}

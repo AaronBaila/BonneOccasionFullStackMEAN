@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MotorAccesoriosDocument</title>
+    </head>
+
+    <body>
+        <!--Mediante ngStyle, aplico un estilo u otro dependiendo de la variable (es como un ngIf pero que cambia los estilos de CSS)-->
+        <app-navbar></app-navbar>
+
+        <div class="container-fluid">
+
+            <div class="filters">
+                <div class="filtersInputs">
+                    <div class="centerInputs">
+                        <button type="button" class="btnSubmit" style="margin-left: 20px;" (click)="aplicarFiltros(brand, ubication, minPrice, maxPrice, minYear, maxYear, minKilometres, maxKilometres, minHorsepower, maxHorsepower, sellerType, numberSeats, numberDoors, carType, engine, gearShift);">Apply Filters</button>
+                        <button type="button" class="btnSubmit" style="margin-left: 20px;" (click)="resetFilters()">Reset Filters</button>
+                    </div>
+    
+                    <div class="normalInputs">
+                        <div class="inputBox">
+                            <select #brand>
+                                <option default>Todas las marcas</option>
+                                <option>Abarth</option>
+                                <option>Aiways</option>
+                                <option>Alfa Romeo</option>
+                                <option>Alpine</option>
+                                <option>Aston Martin</option>
+                                <option>Audi</option>
+                                <option>BMW</option>
+                                <option>BYD</option>
+                                <option>Bentley</option>
+                                <option>CUPRA</option>
+                                <option>Cadillac</option>
+                                <option>Caterham</option>
+                                <option>Chevrolet</option>
+                                <option>Chrysler</option>
+                                <option>Citroen</option>
+                                <option>Corvette</option>
+                                <option>DR</option>
+                                <option>DS</option>
+                                <option>Dacia</option>
+                                <option>Daewoo</option>
+                                <option>Daihatsu</option>
+                                <option>Dodge</option>
+                                <option>Faam</option>
+                                <option>Ferrari</option>
+                                <option>Fiat</option>
+                                <option>Ford</option>
+                                <option>Fornasari</option>
+                                <option>Galloper</option>
+                                <option>Honda</option>
+                                <option>Hummer</option>
+                                <option>Hyundai</option>
+                                <option>INEOS</option>
+                                <option>Infiniti</option>
+                                <option>Isuzu</option>
+                                <option>Iveco</option>
+                                <option>Jaguar</option>
+                                <option>Jeep</option>
+                                <option>KIA</option>
+                                <option>KTM</option>
+                                <option>Karma</option>
+                                <option>LDV</option>
+                                <option>LYNK & CO</option>
+                                <option>Lada</option>
+                                <option>Lamborghini</option>
+                                <option>Lancia</option>
+                                <option>Land Rover</option>
+                                <option>Lexus</option>
+                                <option>Lotus</option>
+                                <option>MG</option>
+                                <option>MINI</option>
+                                <option>Mahindra</option>
+                                <option>Maserati</option>
+                                <option>Maxus</option>
+                                <option>Maybach</option>
+                                <option>Mazda</option>
+                                <option>McLaren</option>
+                                <option>Mercedes-Benz</option>
+                                <option>Mitsubishi</option>
+                                <option>Morgan</option>
+                                <option>Nissan</option>
+                                <option>Opel</option>
+                                <option>Peugeot</option>
+                                <option>Polestar</option>
+                                <option>Porsche</option>
+                                <option>Renault</option>
+                                <option>Renault Trucks</option>
+                                <option>Rolls-Royce</option>
+                                <option>Rover</option>
+                                <option>SEAT</option>
+                                <option>Saab</option>
+                                <option>Santana</option>
+                                <option>Skoda</option>
+                                <option>SsangYong</option>
+                                <option>Subaru</option>
+                                <option>Suzuki</option>
+                                <option>TH!NK</option>
+                                <option>Tata</option>
+                                <option>Tesla</option>
+                                <option>Toyota</option>
+                                <option>VAZ</option>
+                                <option>Volkswagen</option>
+                                <option>Volvo</option>
+                                <option>Wiesmann</option>
+                                <option>Smart</option>
+                            </select>
+                        </div>
+                       
+                        <div class="inputBox">
+                            <select #ubication>
+                                <option default>Todas las ubicaciones</option>
+                                <option>Alger</option>
+                                <option>Oran</option>
+                                <option>Constantina</option>
+                                <option>Annaba</option>
+                                <option>Batna</option>
+                                <option>Blida</option>
+                                <option>Setif</option>
+                                <option>Chlef</option>
+                                <option>Djelfa</option>
+                                <option>Sidi Bel Abbes</option>
+                                <option>Biskra</option>
+                                <option>Tébessa</option>
+                                <option>Tiaret</option>
+                                <option>Ouargla</option>
+                                <option>Bugía</option>
+                                <option>Skikda</option>
+                                <option>Tlemecén</option>
+                                <option>Bordj Bou Arreridj</option>
+                                <option>Béchar</option>
+                                <option>Médéa</option>
+                                <option>Touggourt</option>
+                                <option>Jijel</option>
+                                <option>Souk Ahras</option>
+                                <option>Mostaganem</option>
+                                <option>M'Sila</option>
+                                <option>El Eulma</option>
+                                <option>Khenchela</option>
+                                <option>Saïda</option>
+                                <option>Aïn Oussara</option>
+                                <option>El Oued</option>
+                                <option>Guelma</option>
+                                <option>Relizane</option>
+                                <option>Laghouat</option>
+                                <option>Bordj el Kiffan</option>
+                                <option>Bou Saada</option>
+                                <option>Bab Ezzouar</option>
+                                <option>Messaad</option>
+                                <option>Barika</option>
+                                <option>Ain el Beida</option>
+                                <option>Ghardaia</option>
+                                <option>Baraki</option>
+                                <option>El Khroub</option>
+                            </select>
+                        </div>
+    
+                        <div class="inputBox">
+                            <input type="text" class="inputRange"  name="minPrice" placeholder="Precio Minimo" maxlength="10" #minPrice>
+                            <input type="text" class="inputRange" style="margin-left: 10px;" name="maxPrice" placeholder="Precio Maximo" maxlength="10" #maxPrice>
+                        </div>
+                    </div>
+    
+                    <div class="normalInputs">
+                        <div class="inputBox">
+                            <input type="text" class="inputRange" name="minKilometres" placeholder="Minimo de Kilometros" maxlength="7" #minKilometres>
+                            <input type="text" class="inputRange" style="margin-left: 10px;" name="maxKilometres" placeholder="Maximo de Kilometros" maxlength="7" #maxKilometres>
+                        </div>
+    
+                        <div class="inputBox">
+                            <input type="text" class="inputRange" name="minYear" placeholder="Año Minimo"  maxlength="4" #minYear>
+                            <input type="text" class="inputRange" style="margin-left: 10px;" name="maxYear" placeholder="Año Maximo"  maxlength="4" #maxYear>
+                        </div>
+    
+                        <div class="inputBox">
+                            <select #sellerType>
+                                <option default>Todos los vendedores</option>
+                                <option>Particular</option>
+                                <option>Profesional</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="hiddenFilters" [ngStyle]="{'display':showFiltres ? 'flex' : 'none' }">
+                        
+                        <div class="normalInputs">
+                            <div class="inputBox">
+                                <input type="number" class="input-normal" name="numberSeats" placeholder="Number of Seats" #numberSeats>
+
+                                <input type="number" class="input-normal" style="margin-left: 10px;" name="numberDoors" placeholder="Number of Doors" #numberDoors>
+                            </div>
+
+                            <div class="inputBox">
+                                <input type="text" class="input-normal" name="minHorsepower" placeholder="Minumum HorsePower" maxlength="4" #minHorsepower>
+
+                                <input type="text" class="input-normal" style="margin-left: 10px;" name="maxHorsepower" placeholder="Maximum HorsePower" maxlength="4" #maxHorsepower>
+                            </div>
+
+                            <div class="inputBox">
+                                <select style="margin-left: 10px;" #carType>
+                                    <option>Select a Car Type</option>
+                                    <option>Pequeño</option>
+                                    <option>Coupe</option>
+                                    <option>Sedan</option>
+                                    <option>Familiar</option>
+                                    <option>Monovolumen</option>
+                                    <option>4x4</option>
+                                    <option>Furgoneta</option>
+                                    <option>Otros</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="normalInputs">
+                            <div class="inputBox">
+                                <select #engine>
+                                    <option>Select engine type</option>
+                                    <option>Gasolina</option>
+                                    <option>Diesel</option>
+                                    <option>Electrico</option>
+                                    <option>Gas</option>
+                                    <option>Otros</option>
+                                </select>
+                            </div> 
+
+                            <div class="inputBox">
+                                <select #gearShift>
+                                    <option>Select the gear shift</option>
+                                    <option>Manual</option>
+                                    <option>Automatico</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="centerInputs">
+                        <button class="btnShowMoreLess" (click)="showFilters();" [ngStyle]="{'display':!showFiltres ? 'flex' : 'none' }"><mat-icon>add</mat-icon></button>
+
+                        <div class="hiddenButton" [ngStyle]="{'display':showFiltres ? 'flex' : 'none' }">
+                            <button class="btnShowMoreLess" (click)="hiddeFilters();" [ngStyle]="{'display':showFiltres ? 'flex' : 'none' }"><mat-icon>remove</mat-icon></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+
+                    <a href="/getannounce/:{{announce._id}}" *ngFor="let announce of announcesArray;" class="col-md-3">
+                        <div class="announceCard">
+                            <div class="shape">
+                                <img src = {{announce.photosPaths[0]}}>
+                                <div class="descriptionInfo">
+                                    <div>
+                                        <mat-icon class="infoIcons"><strong>location_on</strong></mat-icon>
+                                        <p><strong>{{ announce.ubication }}</strong></p>
+                                       
+                                        <mat-icon class="infoIcons">phone</mat-icon>
+                                        <p><strong>{{ announce.phone }}</strong></p>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <p class="title">{{ announce.title }}</p>
+                                    <p class="price"><strong>{{ announce.price }} DA</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+ 
+        </div>
+        
+    </body>
+
+</html>
+
+

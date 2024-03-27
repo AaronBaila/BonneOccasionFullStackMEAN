@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AnnounceStandardDocument</title>
+    </head>
+
+    <body>
+        <div class="navbarBox" [ngStyle]="{'display':itsEditRecibido ? 'block' : 'none' }">
+            <app-navbar></app-navbar>
+        </div>
+        
+        <div class="container-fluid">
+              
+            <form (submit) ="uploadData(title, email, phone, category, subcategory, sex, status, price, description, ubication)"> <!-- Con submit y el uso de un boton dentro del formulario, nos permite hacer uso de una funcion y pasarle los inputs del formulario-->
+                
+                <div class="card-form">
+            
+                    <div class="centerInputs">
+                        <input type="text" class="titleInput" value ="{{objectAuxEdit.title}}" placeholder="Title" maxlength="70" #title>
+                    </div>
+
+                    <div class="normalInputs">
+                        <input type="text" value ="{{objectAuxEdit.email}}" placeholder="Email" maxlength="60" #email>
+                           
+                        <input type="text" value ="{{objectAuxEdit.phone}}" placeholder="Phone" maxlength="15" required #phone>
+                    </div>
+
+                    <div class="normalInputs">
+                        <select [(ngModel)]="objectAuxEdit.category" (change)="onSelected($event)" [class.selected-option]="selectedOptionStyle" name="category" #category>
+                            <option>Select Category</option>
+                            <option>Accesorios Vehiculos/Motor</option>
+                            <option>Bicicletas</option>
+                            <option>Moviles y Telefonia</option>
+                            <option>Moda y Accesorios</option>
+                            <option>TV, Audio y Foto</option>
+                            <option>Informatica y Electronica</option>
+                            <option>Consolas y Videojuegos</option>
+                            <option>Niños y Bebes</option>
+                            <option>Deporte y Ocio</option>
+                            <option>Hogar y Jardin</option>
+                            <option>Electrodomesticos</option>
+                            <option>Cine, Libros y Musica</option>
+                            <option>Construccion y Reformas</option>
+                            <option>Agricultura</option>
+                            <option>Industria</option>
+                            <option>Otros</option>
+                        </select>
+
+                        <select [disabled]="subCatDisabled" [(ngModel)]="objectAuxEdit.subcategory" [ngModelOptions]="{standalone: true}" (change)="onSelectedSubCate($event)" [class.selected-option]="selectedOptionStyle2" #subcategory>
+                            <option>Select Subcategory</option>
+                            <option *ngFor="let dato of arraySubcategorias">{{dato}}</option>
+                        </select>
+                        
+                        
+                        <select #sex [ngStyle]="{'display':showSex ? 'block' : 'none' }"  value ="{{objectAuxEdit.sex}}" (change)="onSelectedSex($event)" [class.selected-option]="selectedOptionStyle3"> <!-- Mediante [ngClass] puedo evaluar que clase usar en el componente o no (en este caso si showSex es False, la clase del InputSelect seria sex y en caso contrario un string vacio '') -->
+                            <option>Select sex</option>
+                            <option>Hombre</option>
+                            <option>Mujer</option>
+                            <option>Unisex</option>
+                        </select>
+                    </div>
+                      
+                       
+                    <div class="normalInputs">
+                        <select value ="{{objectAuxEdit.status}}" (change)="onSelectedStatus($event)" [class.selected-option]="selectedOptionStyle4" #status>
+                            <option>Select the status</option>
+                            <option>Nuevo</option>
+                            <option>Como nuevo</option>
+                            <option>En buen estado</option>
+                            <option>En condiciones aceptables</option>
+                            <option>Gastado</option>
+                        </select>
+
+                        <div class="price">
+                            <input type="text" style="width: 150px;" value ="{{objectAuxEdit.price}}" placeholder="Price" maxlength="10" required #price>
+                            <strong><h1 style="margin-left: 10px; margin-right: 5px;">DA</h1></strong>
+                        </div>
+                        
+                        <select name ="ubication" value ="{{objectAuxEdit.ubication}}" (change)="onSelectedUbication($event)" [class.selected-option]="selectedOptionStyle5" #ubication>
+                            <option>Select the ubication</option>
+                            <option>Alger</option>
+                            <option>Oran</option>
+                            <option>Constantina</option>
+                            <option>Annaba</option>
+                            <option>Batna</option>
+                            <option>Blida</option>
+                            <option>Setif</option>
+                            <option>Chlef</option>
+                            <option>Djelfa</option>
+                            <option>Sidi Bel Abbes</option>
+                            <option>Biskra</option>
+                            <option>Tébessa</option>
+                            <option>Tiaret</option>
+                            <option>Ouargla</option>
+                            <option>Bugía</option>
+                            <option>Skikda</option>
+                            <option>Tlemecén</option>
+                            <option>Bordj Bou Arreridj</option>
+                            <option>Béchar</option>
+                            <option>Médéa</option>
+                            <option>Touggourt</option>
+                            <option>Jijel</option>
+                            <option>Souk Ahras</option>
+                            <option>Mostaganem</option>
+                            <option>M'Sila</option>
+                            <option>El Eulma</option>
+                            <option>Khenchela</option>
+                            <option>Saïda</option>
+                            <option>Aïn Oussara</option>
+                            <option>El Oued</option>
+                            <option>Guelma</option>
+                            <option>Relizane</option>
+                            <option>Laghouat</option>
+                            <option>Bordj el Kiffan</option>
+                            <option>Bou Saada</option>
+                            <option>Bab Ezzouar</option>
+                            <option>Messaad</option>
+                            <option>Barika</option>
+                            <option>Ain el Beida</option>
+                            <option>Ghardaia</option>
+                            <option>Baraki</option>
+                            <option>El Khroub</option>
+                        </select>
+                    </div>
+
+                    <div class="centerInputs">
+                        <textarea name="description" style="width: 800px;" class="input-textarea" name="description" value ="{{objectAuxEdit.description}}" placeholder="Description" maxlength="500" #description></textarea>
+                    </div>
+
+                    <div class="errorMsg">
+                        <p>{{errorMSG}}</p>
+                    </div>
+
+                    <div class="buttonImage">
+                        <h2>Upload your images</h2>
+                        <div class="uploadButton">
+                            <!-- Mediante el input y el img creo el boton de subida -->
+                            <!-- Mediante (change)="nombreFuncion($event)" hacemos uso de la funcion, y mediante $event le pasamos los archivos (array de archivos seleccionados mediant el input file) -->
+                            <!-- Mediante "multiple" permito que puedas seleccionar mas de un archivo a la vez a la hora de subirlos -->
+                            <input type ="file" style="display: none;" (change)="onPhotoSelected($event)" multiple #photoInput/>
+                            <!-- Mediante (click)="nombre de la variable del input de arriba.click()" asocio la imagen con el boton input file de arriba -->
+                            <h1 (click)="photoInput.click()"><mat-icon>add_a_photo</mat-icon></h1>
+                        </div>
+                    </div>
+
+                    <div class="buttonBox" *ngIf="itsEditRecibido; else normalButton">
+                        <button type="submit" class="btnSubmit">Edit Announce</button>
+                        <button type="button" class="btnSubmit" (click)="deleteAnnounce();">Delete Announce</button>
+                    </div>
+
+                    <ng-template #normalButton>
+                        <div class="buttonBox">
+                            <button class="btnSubmit">Post Announce</button>
+                        </div>
+                    </ng-template>
+
+                </div>
+            </form>
+
+            <div class="popup-container" id="popup" [ngStyle]="{'display':showUpdateOk ? 'block' : 'none' }">
+                <div class="popup-content">
+                  <h2><strong>Announce Succesfully Updated</strong></h2>
+                  <p>Press the button for continue</p>
+                  <button class="btnSubmit" (click)="reloadEdit()">Continue</button>
+                </div>
+            </div>
+
+            <div class="popup-container" id="popup" [ngStyle]="{'display':showDeleteMSG ? 'block' : 'none' }">
+                <div class="popup-content">
+                  <h2><strong>Announce Succesfully Deleted</strong></h2>
+                  <p>Press the button for continue</p>
+                  <a href ="/" class="btnSubmit">Continue</a>
+                </div>
+            </div>
+
+            <div class="photosBox">
+                <!-- PREVIEW DE FOTOS ANTES DE SUBIRLAS -->
+                <div class="itsEdit" *ngIf="!itsEditRecibido; else isEdit">
+
+                    <div class="row" style="margin-left: 25px;">
+                            
+                        <!-- Utilizo el arrayPhotosPreview definido en el .ts (array que almacena el preview de las fotos) y mediante un bucle for (*ngFor) muestro todas las fotos -->
+                        <div class="col-md-3" *ngFor="let dato of objectPhotos.arrayPreview"> <!-- Creo una columna de md-6 por cada imagen -->
+                            <div class="image-frame">
+                                <div class="image-shape">
+                                    <img src = {{dato}} width="100%" height="100%" #imgData> <!-- Muestro la imagen -->
+
+                                    <div class="buttonsInfo">
+                                            
+                                        <div class="buttonoverlapmulti"> <!-- Boton para cambiar la imagen -->
+                                            <h1 (click)="deletePhoto(imgData);"><mat-icon>delete</mat-icon></h1>
+                                        </div>
+                                                
+                                        <div class="buttonoverlapmulti2"> <!-- Boton para cambiar la imagen -->
+                                            <input type ="file" style="display: none;" (change)="changePhoto(imgData, $event);" #photoChange/>
+                                            <h1 (click)="photoChange.click()"><mat-icon>add_a_photo</mat-icon></h1>
+                                        </div>
+                                                
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <ng-template #isEdit>
+                    <div class="row">
+
+                        <div class="col-md-3" *ngFor="let datoEdicion of objectPhotosEdit.arrayPhotosEdit">
+                            <div class="image-frame">
+                                <div class="image-shape">
+                                    <img src = {{datoEdicion}} width="100%" height="100%" #imgData>
+    
+                                    <div class="buttonsInfo">
+                                                
+                                        <div class="buttonoverlapmulti"> <!-- Boton para cambiar la imagen -->
+                                            <h1 (click)="deletePhoto(imgData);"><mat-icon>delete</mat-icon></h1>
+                                        </div>
+                                                
+                                        <div class="buttonoverlapmulti2"> <!-- Boton para cambiar la imagen -->
+                                            <input type ="file" style="display: none;" (change)="changePhoto(imgData, $event);" #photoChange/>
+                                            <h1 (click)="photoChange.click()"><mat-icon>add_a_photo</mat-icon></h1>
+                                        </div>
+                                                
+                                    </div>
+    
+                                </div>   
+                            </div>
+                        </div>
+
+                        <div class="col-md-3" *ngFor="let dato of objectPhotos.arrayPreview"> <!-- Creo una columna de md-3 por cada imagen -->
+                            <div class="image-frame">
+                                <div class="image-shape">
+                                    <img src = {{dato}} width="100%" height="100%" #imgData> <!-- Muestro la imagen -->
+
+                                    <div class="buttonsInfo">
+                                                
+                                        <div class="buttonoverlapmulti"> <!-- Boton para cambiar la imagen -->
+                                            <h1 (click)="deletePhoto(imgData);"><mat-icon>delete</mat-icon></h1>
+                                        </div>
+                                                
+                                        <div class="buttonoverlapmulti2"> <!-- Boton para cambiar la imagen -->
+                                            <input type ="file" style="display: none;" (change)="changePhoto(imgData, $event);" #photoChange/>
+                                            <h1 (click)="photoChange.click()"><mat-icon>add_a_photo</mat-icon></h1>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+            
+        </div>
+    
+    </body>
+
+</html>
+

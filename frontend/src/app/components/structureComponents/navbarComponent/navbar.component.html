@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NavBarDocument</title>
+    </head>
+
+    <body>
+
+            <header>
+                <nav class="navbar">
+                    <a href="/"><label class="logo">Bonne Occasion</label></a>
+
+                    <div class="wrap">
+                        <div class="search">
+                            <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                            <button type="submit" class="searchButton">
+                                <mat-icon >search</mat-icon>
+                             </button>
+                        </div>
+                    </div>
+
+                    <ul class="nav-list">
+                        <ng-container *ngIf = "!authService.isLoggedService(); else loggedIn"><!--Mediante el else apunto a #loggedIn para que muestre el boton logout en caso de estar loggeado-->
+                            <div class="dropdown">
+                                <button class="dropdown-button" title="PROFILE"><mat-icon class="iconsNav">person</mat-icon></button>
+                                <div class="dropdown-content">
+                                    <li><a href="/login">Log In</a></li>
+                                </div>
+                            </div>
+                        </ng-container>
+
+                        <ng-template #loggedIn>
+                            <div class="dropdown">
+                                <button class="dropdown-button" title="PROFILE"><mat-icon class="iconsNav">person</mat-icon></button>
+                                <div class="dropdown-content">
+                                    <li><a class="aDropdown" (click)="authService.logOutService()">Log Out</a></li>
+                                    <li><a class="aDropdown" href="/myposts">My Posts</a></li>
+                                    <li><a class="aDropdown" href="/editprofile">Profile Config</a></li>
+                                </div>
+                            </div>
+                        </ng-template>
+
+                        <a href="/postannounce" title="POST">
+                            <button class="addButton" title="POST">
+                                <mat-icon class="iconAdd">add</mat-icon>
+                            </button>
+                        </a>
+                    </ul>
+                </nav>
+            </header>
+       
+    </body>
+</html>
+

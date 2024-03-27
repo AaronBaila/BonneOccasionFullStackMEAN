@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ConstruccionDocument</title>
+    </head>
+
+    <body>
+
+        <div class="filtros">
+            <div class="row">
+                
+                <div class="col-md-2">
+                    <input type="text" class="input-normal" name="minimumPrice" placeholder="Precio Minimo" maxlength="10" required #minimumPrice>
+                    <input type="text" class="input-normal" name="maximumPrice" placeholder="Precio Maximo" maxlength="10" required #maximumPrice>
+                </div>
+
+                <div class="col-md-2">
+                    <label>Sub Category: </label>
+                    <select #subCategory>
+                        <option default>Select a type of Sub Category</option>
+                        <option>Ordenadores y accesorios</option>
+                        <option>Monitores</option>
+                        <option>Impresoras y accesorios</option>
+                        <option>Cables</option>
+                        <option>Cargadores y baterías</option>
+                        <option>Software</option>
+                        <option>Realidad virtual y aumentada</option>
+                        <option>Otros</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <label>Status: </label>
+                    <select #status>
+                        <option default>Select the status</option>
+                        <option>Nuevo</option>
+                        <option>Como nuevo</option>
+                        <option>En buen estado</option>
+                        <option>En condiciones aceptables</option>
+                        <option>Gastado</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <select #ubication>
+                        <option default>Select the ubication</option>
+                        <option>Alger</option>
+                        <option>Oran</option>
+                        <option>Constantina</option>
+                        <option>Annaba</option>
+                        <option>Batna</option>
+                        <option>Blida</option>
+                        <option>Setif</option>
+                        <option>Chlef</option>
+                        <option>Djelfa</option>
+                        <option>Sidi Bel Abbes</option>
+                        <option>Biskra</option>
+                        <option>Tébessa</option>
+                        <option>Tiaret</option>
+                        <option>Ouargla</option>
+                        <option>Bugía</option>
+                        <option>Skikda</option>
+                        <option>Tlemecén</option>
+                        <option>Bordj Bou Arreridj</option>
+                        <option>Béchar</option>
+                        <option>Médéa</option>
+                        <option>Touggourt</option>
+                        <option>Jijel</option>
+                        <option>Souk Ahras</option>
+                        <option>Mostaganem</option>
+                        <option>M'Sila</option>
+                        <option>El Eulma</option>
+                        <option>Khenchela</option>
+                        <option>Saïda</option>
+                        <option>Aïn Oussara</option>
+                        <option>El Oued</option>
+                        <option>Guelma</option>
+                        <option>Relizane</option>
+                        <option>Laghouat</option>
+                        <option>Bordj el Kiffan</option>
+                        <option>Bou Saada</option>
+                        <option>Bab Ezzouar</option>
+                        <option>Messaad</option>
+                        <option>Barika</option>
+                        <option>Ain el Beida</option>
+                        <option>Ghardaia</option>
+                        <option>Baraki</option>
+                        <option>El Khroub</option>
+                    </select>
+                </div>
+            </div>    
+        </div>
+
+        <!-- MUESTRO ANUNCIOS --> 
+
+       <div class="container-fluid">
+
+            <a href="/getannounce/:{{announce._id}}" *ngFor="let announce of announcesArray;">
+                <div class="announceCard">
+
+                    <div class="row align-items-center">
+
+                        <div class="col-md-6">
+                            <div class="photo">
+                                <img src = {{announce.photosPaths[0]}}>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="announceInfo">
+                                <p>Tile: <span>{{ announce.title }}</span> </p>
+                                <p>Phone: <span>{{ announce.phone }}</span></p>
+                                <p>Email: <span>{{ announce.email }}</span></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+            
+        </div>
+        
+    </body>
+
+</html>
+
+

@@ -1,0 +1,101 @@
+*{
+    margin:0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.container-fluid{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.container{
+    width: 100%;
+    padding-right: 0; 
+}
+
+.container-fluid .container .announceCard{
+    border: 1px solid black;
+    border-radius: 20px;
+    position: relative;
+    width: 240px;
+    height: 220px;
+    margin-top: 10px;
+    margin-bottom: 170px;
+    margin-right: 0;
+    margin-left: 60px;
+}
+
+.announceCard .shape{
+    border-radius: 20px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    transition: 0.5s;
+}
+
+.announceCard:hover .shape{
+    transform: scale(1.3);
+}
+
+.announceCard .info{
+    font-family: 'Rubik', sans-serif;
+    padding: 10px;
+    color:black;
+    border-radius: 10px, 10px, 10px, 10px;
+}
+
+.announceCard .info .title{
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-size: 0.9em;
+}
+.announceCard .info .price{
+    margin:0;
+    padding: 0;
+    color:#25A18E;
+}
+
+.announceCard .shape img{
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.announceCard .shape .descriptionInfo{
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(45deg, #25A18E, rgba(0,165,207, 0.9));
+    color: #fff;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.announceCard .shape .infoIcons{
+  color:black;
+}
+
+.announceCard:hover .shape .descriptionInfo{
+    opacity: 1;
+}
+
+
+

@@ -1,0 +1,344 @@
+.navbarBox{
+    margin-bottom: 130px;
+}
+
+.container-fluid{
+    text-decoration: none;
+    display: flex;
+    justify-content:space-around;
+    height: 100vh;
+    width: 100%;
+    margin-top: 50px;
+}
+
+form{
+    width: 60%;
+    height: fit-content;
+}
+
+.card-form{
+    margin-top: 5px;
+    font-family: 'Rubik', sans-serif;
+    margin-left: 45px;
+}
+
+.centerInputs{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.normalInputs{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sex{
+    display: none;
+}
+
+input {
+    background: rgba(96, 94, 94, 0.2);
+    width: 100%;
+    border: 0px solid black;
+    padding-left: 15px;
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    outline: none;
+    color: #7e7e7e;
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+input:focus {
+    border: 2px solid #25A18E; 
+    box-shadow: 0 0 5px rgba(37, 161, 142, 0.9); /* Agrega una sombra al enfocar */ 
+}
+
+input::placeholder {
+    color: #3e3e3e; 
+    text-align: center;
+}
+
+input[type="text"] {
+    color: #004E64;
+}
+
+.titleInput{
+    width: 100%;
+}
+
+.selected-option {
+    /* Estilo del texto después de seleccionar una opción */
+    color: #004E64; /* Puedes cambiar el color a tu preferencia */
+}
+
+select{
+    background: rgba(96, 94, 94, 0.2);
+    width: 100%;
+    border: 0px solid black;
+    padding-left: 15px;
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    outline: none;
+    color: #7e7e7e;
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+select:focus {
+    border: 2px solid #25A18E; 
+    outline: none; /* Elimina el contorno predeterminado al enfocar */
+    box-shadow: 0 0 5px rgba(37, 161, 142, 0.9); /* Agrega una sombra al enfocar */
+}
+
+.selected-option {
+    /* Estilo del texto después de seleccionar una opción */
+    color: #004E64; /* Puedes cambiar el color a tu preferencia */
+}
+
+textarea {
+    background: rgba(96, 94, 94, 0.2);
+    width: 100%;
+    border: 0px solid black;
+    padding-left: 15px;
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    outline: none;
+    color: #7e7e7e;
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    width: 100%;
+    height: 130px;
+    color: #004E64;
+}
+
+textarea::placeholder {
+    color: #3e3e3e; 
+    text-align: center;
+    margin: 10px;
+}
+
+textarea:focus {
+    border: 2px solid #25A18E; 
+    box-shadow: 0 0 5px rgba(37, 161, 142, 0.9); /* Agrega una sombra al enfocar */ 
+}
+
+.buttonBox{
+    width: 100%;
+    margin-top: 2px;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btnSubmit {
+    font-family: 'Rubik', sans-serif;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    width: 40%;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    background: #25A18E;
+    box-shadow: 0 0 10px rgba(37, 161, 142, 0.8); /* Sutil sombra */
+    overflow: hidden;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+    
+.btnSubmit:hover {
+    background: #007999; /* Cambia el color de fondo al pasar el ratón */
+    box-shadow: 0 0 20px rgba(0, 121, 153, 0.8); /* Aumenta la intensidad de la sombra */
+}
+
+/*IMAGES*/
+.image-frame{
+    margin-bottom: 25px;
+    border: 1px solid black;
+    margin-left: 30px;
+    border-radius: 20px;
+    width: 170px;
+    height: 170px;
+}
+
+.image-frame .image-shape{
+    border-radius: 20px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    transition: 0.5s;
+}
+
+.image-frame:hover .image-shape{
+    transform: scale(1.1);
+}
+
+.image-frame .image-shape img{
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.image-frame .image-shape .buttonsInfo{
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(45deg, #25A18E, rgba(0,165,207, 0.9));
+    color: #fff;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.image-frame:hover .image-shape .buttonsInfo{
+    opacity: 1;
+}
+
+.buttonoverlapmulti{
+    display: none;
+    z-index: 2;
+    width: 70px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.buttonoverlapmulti mat-icon{
+    transform: scale(1.5);
+}
+
+.buttonoverlapmulti2{
+    display: none;
+    z-index: 2;
+    width: 70px;
+    height: 30px;
+}
+
+.buttonoverlapmulti2 mat-icon{
+    transform: scale(1.5);
+}
+
+.image-frame:hover .buttonoverlapmulti{ 
+    display:block;
+}
+
+.image-frame:hover .buttonoverlapmulti2{ 
+    display:block;
+}
+
+.uploadButton{
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    margin: 0;
+}
+
+.uploadButton:hover {
+    transform: scale(1.3);
+    color:#00A5CF;
+}
+
+.uploadButton h1 mat-icon{
+    transform: scale(3);
+    margin-top: 15px;
+}
+
+.buttonImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+}
+
+.buttonImage h2{
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 25px;
+}
+
+.photosBox{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    margin-right: 35px;
+}
+
+.photosBox h2{
+    font-family: 'Rubik', sans-serif;
+}
+
+.errorMsg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.errorMsg p{
+    color:red;
+    font-family: 'Rubik', sans-serif;
+}
+
+.popup-container {
+    width: 500px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #f00;
+  }

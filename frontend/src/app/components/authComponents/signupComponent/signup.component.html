@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SignUpDocument</title>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            
+            <form (submit) = "uploadData(email, password, name, phone)"> <!--Mediante submit, hacemos uso de la funcion uploadData al dar click en el boton de dentro del formulario-->
+                <div class="row">
+                    <!--Mediante #NombreVariable le asignamos una variable a el dato introducido en los inputs (de esta manera podemos pasarlos a ala funcion al hacer submit)-->
+                    <div class="col-md-12">
+                        <input type="text" class="input-normal" name="email" placeholder="Email" required #email autofocus> <!--Autofocus para posicionar el cursos en el input al entrar en el componente-->
+                    </div>
+
+                    <div class="col-md-12">
+                        <input type="text" class="input-normal" name="phone" placeholder="Phone" required #phone>
+                    </div>
+
+                    <div class="col-md-12">
+                        <input type="text" class="input-normal" name="name" placeholder="Name" required #name>
+                    </div>
+
+                    <div class="col-md-12">
+                        <input type="password" class="input-normal" name="password" placeholder="Password" required #password>
+                    </div>
+
+                    <div class="col-md-12">
+                        <button class="btn btn-primary btn-block" style="width: 100%;">Sign Up</button> <!--Mediante este boton hacemos uso de el submit-->
+                    </div>
+
+                    <div class="container-upload col-md-12">
+                        <!--Hacemos uso de *ngIf y de las variables booleanas del .ts para poder mostrar los errores en caso de que los haya-->
+                        <h2 *ngIf="ifError" style="color: red;"><strong>Campos obligatorios no rellenados</strong></h2>
+                        <h2 *ngIf="ifErrorPassword" style="color: red;"><strong>Password Incorrecto, minimo 8 caracteres</strong></h2>
+                        <h2 *ngIf="ifErrorEmail" style="color: red;"><strong>Email Incorrecto</strong></h2>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </body>
+
+
+</html>

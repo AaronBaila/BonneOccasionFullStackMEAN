@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PostAnnounceDocument</title>
+    </head>
+
+    <body>
+        
+        <app-navbar></app-navbar>
+        
+        <div class="container-fluid">
+            <div class="cardType">
+                <div class="titleCard">
+                    <h1><strong>What to sell ?</strong></h1>
+                    <p>In Bonne Occasion there is room for (almost) everything</p>
+                </div>
+                <div class="buttonsCard">
+                    <a class="categoriesButton" title="Others" (click)="showStandardCompo()">
+                        <div class="divButton">
+                            <h2>Others</h2>
+                            <div class="iconsButton">
+                                <mat-icon class="decorIcons">pedal_bike</mat-icon>
+                                <mat-icon class="decorIcons">checkroom</mat-icon>
+                                <mat-icon class="decorIcons">smartphone</mat-icon>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="categoriesButton" title="Vehicle" (click)="showVehiculoCompo()">
+                        <div class="divButton">
+                            <h2>Vehicle</h2>
+                            <div class="iconsButton">
+                                <mat-icon class="decorIcons">directions_car</mat-icon>
+                                <mat-icon class="decorIcons">local_shipping</mat-icon>
+                                <mat-icon class="decorIcons">directions_bus</mat-icon>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="categoriesButton" title="Moto" (click)="showMotoCompo()">
+                        <div class="divButton">
+                            <h2>Moto</h2>
+                            <div class="iconsButton">
+                                <mat-icon class="decorIcons">moped</mat-icon>
+                                <mat-icon class="decorIcons">two_wheeler</mat-icon>
+                                <mat-icon class="decorIcons">motorcycle</mat-icon>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="categoriesButton" title="Properties" (click)="showPropertyCompo()">
+                        <div class="divButton">
+                            <h2>Property</h2>
+                            <div class="iconsButton">
+                                <mat-icon class="decorIcons">home</mat-icon>
+                                <mat-icon class="decorIcons">house</mat-icon>
+                                <mat-icon class="decorIcons">warehouse</mat-icon>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="categoriesButton" title="Service" (click)="showServiceCompo()">
+                        <div class="divButton">
+                            <h2>Service</h2>
+                            <div class="iconsButton">
+                                <mat-icon class="decorIcons">construction</mat-icon>
+                                <mat-icon class="decorIcons">cleaning_services</mat-icon>
+                                <mat-icon class="decorIcons">electrical_services</mat-icon>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="categoriesButton" title="Job" (click)="showJobCompo()">
+                        <div class="divButton">
+                            <h2>Job</h2>
+                            <div class="iconsButton">
+                                <mat-icon class="decorIcons">work</mat-icon>
+                                <mat-icon class="decorIcons">keyboard</mat-icon>
+                                <mat-icon class="decorIcons">support_agent</mat-icon>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <app-announcevehiculo *ngIf="showVehiculo"></app-announcevehiculo>
+            <app-announcemoto *ngIf="showMoto"></app-announcemoto>
+            <app-announcestandard *ngIf="showStandard"></app-announcestandard>
+            <app-announcepropiedad *ngIf="showProperty"></app-announcepropiedad>
+            <app-announceservicio *ngIf="showService"></app-announceservicio>
+            <app-announceempleo *ngIf="showJob"></app-announceempleo>
+        </div>
+        
+    </body>
+
+</html>
+

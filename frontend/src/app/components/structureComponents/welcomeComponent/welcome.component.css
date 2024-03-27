@@ -1,0 +1,137 @@
+*{
+  margin:0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container-fluid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container-fluid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Ajusta la opacidad aquí (0 es transparente, 1 es opaco) */
+}
+
+.overlay {
+  width: 1100px;
+  border-radius: 25px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2; /* Asegúrate de que el overlay esté encima de la imagen */
+}
+
+.overlay h1 {
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+  font-size: 3em;
+}
+
+.overlay h2 {
+  font-family: 'Rubik', sans-serif;
+  margin-top: 40px;
+  color:white;
+}
+  
+/* *** BUTTONS *** */
+/* Button Post */
+.btnPost {
+  font-family: 'Rubik', sans-serif;
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  background: #25A18E;
+  box-shadow: 0 0 10px rgba(37, 161, 142, 0.8); /* Sutil sombra */
+  overflow: hidden;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+  
+/* Efecto hover */
+.btnPost:hover {
+  background: #007999; /* Cambia el color de fondo al pasar el ratón */
+  box-shadow: 0 0 20px rgba(0, 121, 153, 0.8); /* Aumenta la intensidad de la sombra */
+}
+
+/* *** RESPONSIVE QUERYs *** */
+@media (min-width: 0px) and (max-width: 320px) {
+  .cardWarning {
+    display: none;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 413px) {
+  .cardWarning {
+    width: 350px;
+    height: 150px;
+  }
+
+  .contentWarning h1{
+    font-size: 1em;
+  }
+
+  .contentWarning p{
+    display: none;
+  }
+
+  .contentWarning .decorIconsContainer{
+    display: none;
+  }
+
+  .btnPost{
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 414px) and (max-width: 504px) {
+  .cardWarning {
+    width: 400px;
+    height: 150px;
+  }
+
+  .contentWarning h1{
+    font-size: 1em;
+  }
+
+  .contentWarning p{
+    display: none;
+  }
+
+  .contentWarning .decorIconsContainer{
+    display: none;
+  }
+
+  .btnPost{
+    font-size: 15px;
+  }
+}

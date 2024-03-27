@@ -1,0 +1,76 @@
+.container-fluid{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardType{
+    padding: 20px;
+}
+
+.titleCard {
+    font-family: 'Rubik', sans-serif;
+    margin-left: 22px;
+}
+
+.titleCard h1{
+    font-family: 'Rubik', sans-serif;
+}
+
+.buttonsCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.divButton{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    width: 280px;
+    height: fit-content;
+    border: 2px solid #004E64;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+  
+.divButton h2{
+    font-family: 'Rubik', sans-serif;
+    margin:0;
+    padding-top: 30px;
+}
+  
+.divButton:hover{
+    border: 3px solid #00A5CF;
+    transform:scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 165, 207, 0.5);
+}
+
+.categoriesButton{
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Hereda el color del texto del elemento padre */
+    cursor: pointer; /* Cambia el cursor al pasar por encima del enlace */
+}
+  
+.iconsButton{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 13px;
+    padding-left: 7px;
+}
+
+.decorIcons{
+    padding-left: 5px;
+    padding-right: 30px;
+    margin: 20px;
+    width: 30px;
+    transform: scale(1.8);
+    margin-right: 40px;
+}

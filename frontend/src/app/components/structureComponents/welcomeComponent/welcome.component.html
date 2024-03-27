@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WelcomeDocument</title>
+    </head>
+
+    <body>
+        <!--Mediante ngStyle, aplico un estilo u otro dependiendo de la variable (es como un ngIf pero que cambia los estilos de CSS)-->
+        <app-navbar [ngStyle]="{'display':isNavbarVisible ? 'block' : 'none' }"></app-navbar>
+        
+        <div class="container-fluid">
+            <img src = "assets/img/cosas4.jpg">
+            <div class="overlay">
+                <h1><strong style="color:#25A18E;">Win money</strong> with the things you dont use</h1>
+                <h2>Upload your announces anonymously or with an account for getting few moore advantages</h2>
+                <a href ="/postannounce" class="btnPost">Post Announce</a>
+            </div>
+        </div> 
+
+        <div class="categoriesCarousel">
+            <app-categories-carousel></app-categories-carousel>
+        </div>
+
+        <div class="getAnnounces">
+            <app-getannounces></app-getannounces>
+        </div>
+    
+    </body>
+
+
+</html>
+
+

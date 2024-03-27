@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MyPostsDocument</title>
+    </head>
+
+    <body>
+        
+        <div class="container-fluid">
+
+            <a href="/getannounce/:{{announce._id}}" *ngFor="let announce of ArrayMyPosts;">
+                <div class="announceCard">
+
+                    <div class="row align-items-center">
+
+                        <div class="col-md-6">
+                            <div class="photo">
+                                <img src = {{announce.photosPaths[0]}}>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="announceInfo">
+                                <p>Tile: <span>{{ announce.title }}</span> </p>
+                                <p>Ubication: <span>{{ announce.ubication }}</span></p>
+                                <p>Description: <span>{{ announce.description }}</span></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+            
+        </div>
+        
+    </body>
+
+
+</html>
+
+

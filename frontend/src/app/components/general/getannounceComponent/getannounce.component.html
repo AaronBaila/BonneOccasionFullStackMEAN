@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AnnounceDocument</title>
+    </head>
+
+    <body>
+
+        <app-navbar></app-navbar>
+        
+        <div class="container-fluid">
+
+            <div class="carousel">
+                <ngb-carousel [interval]="0">
+
+                    <ng-template ngbSlide *ngFor="let img of announce.photosPaths">
+                        <div class="carouselContent">
+                            <div class="whiteSpaceForCarousel"><mat-icon>arrow_back_ios</mat-icon></div>
+                            <div class="announceCardImages">
+                                <div class="image-frame">
+                                    <div class="image-shape">
+                                        <img src = {{img}}>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="whiteSpaceForCarousel2"><mat-icon>arrow_forward_ios</mat-icon></div>
+                        </div>
+                        
+                    </ng-template> 
+
+                </ngb-carousel>
+            </div>  
+
+            <div class="popup-container" id="popup" [ngStyle]="{'display':showPhoneMSG ? 'block' : 'none' }">
+                <div class="popup-content">
+                    <div class="popup-info">
+                        <h1><mat-icon>phone_in_talk</mat-icon></h1>
+                        <h1><strong>{{announce.phone}}</strong></h1>
+                    </div>
+                    <div class="popup-close">
+                        <button class="btnClose" (click)="hiddePhone();"><mat-icon>close</mat-icon></button>
+                    </div>
+                  
+                </div>
+            </div>
+
+            <div class="infoTable">
+              
+                <table>
+                    <tr>
+                      <th colspan="2">Announce Information</th>
+                    </tr>
+                    <!-- Common Variables -->
+                    <tr>
+                      <td><strong>Title</strong></td>
+                      <td>{{announce.title}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Price</strong></td>
+                        <td>{{announce.price}} DA</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ubication</strong></td>
+                        <td>{{announce.ubication}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phone</strong></td>
+                        <td>{{announce.phone}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email</strong></td>
+                        <td>{{announce.email}}</td>
+                    </tr>
+                    
+                    <!-- Specific Fields Standard Announce -->
+                    <tr [ngStyle]="{'display':showStandardInformation ? 'table-row' : 'none' }">
+                        <td><strong>Category</strong></td>
+                        <td>{{announce.category}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showStandardInformation ? 'table-row' : 'none' }">
+                        <td><strong>Sub Category</strong></td>
+                        <td>{{announce.subcategory}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showStandardInformation ? 'table-row' : 'none' }">
+                        <td><strong>Status</strong></td>
+                        <td>{{announce.status}}</td>
+                    </tr>
+
+                    <!-- Specific Fields Job-Service Announce -->
+                    <tr [ngStyle]="{'display':showStandardInformation ? 'table-row' : 'none' }">
+                        <td><strong>Category</strong></td>
+                        <td>{{announce.category}}</td>
+                    </tr>
+
+                    <!-- Specific Fields Property Announce -->
+                    <tr [ngStyle]="{'display':showPropertyInformation ? 'table-row' : 'none' }">
+                        <td><strong>Rent or Sell</strong></td>
+                        <td>{{announce.rentOrSell}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showPropertyInformation ? 'table-row' : 'none' }">
+                        <td><strong>Type of Space</strong></td>
+                        <td>{{announce.typeOfSpace}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showPropertyInformation ? 'table-row' : 'none' }">
+                        <td><strong>Area</strong></td>
+                        <td>{{announce.area}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showPropertyInformation ? 'table-row' : 'none' }">
+                        <td><strong>Seller Type</strong></td>
+                        <td>{{announce.sellerType}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showPropertyInformation ? 'table-row' : 'none' }">
+                        <td><strong>Status</strong></td>
+                        <td>{{announce.status}}</td>
+                    </tr>
+
+                     <!-- Specific Fields Moto Announce -->
+                     <tr [ngStyle]="{'display':showMotoInformation ? 'table-row' : 'none' }">
+                        <td><strong>Brand</strong></td>
+                        <td>{{announce.brand}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showMotoInformation ? 'table-row' : 'none' }">
+                        <td><strong>Moto Type</strong></td>
+                        <td>{{announce.motoType}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showMotoInformation ? 'table-row' : 'none' }">
+                        <td><strong>Model</strong></td>
+                        <td>{{announce.model}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showMotoInformation ? 'table-row' : 'none' }">
+                        <td><strong>Kilometres</strong></td>
+                        <td>{{announce.kilometres}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showMotoInformation ? 'table-row' : 'none' }">
+                        <td><strong>Horse Power</strong></td>
+                        <td>{{announce.horsepower}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showMotoInformation ? 'table-row' : 'none' }">
+                        <td><strong>Year</strong></td>
+                        <td>{{announce.year}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showMotoInformation ? 'table-row' : 'none' }">
+                        <td><strong>Version</strong></td>
+                        <td>{{announce.version}}</td>
+                    </tr>
+
+                    <!-- Specific Fields Vehicle Announce -->
+                    <tr [ngStyle]="{'display':showVehicleInformation ? 'table-row' : 'none' }">
+                        <td><strong>Brand</strong></td>
+                        <td>{{announce.brand}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showVehicleInformation ? 'table-row' : 'none' }">
+                        <td><strong>Engine</strong></td>
+                        <td>{{announce.engine}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showVehicleInformation ? 'table-row' : 'none' }">
+                        <td><strong>Gear Shift</strong></td>
+                        <td>{{announce.gearShift}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showVehicleInformation ? 'table-row' : 'none' }">
+                        <td><strong>Kilometres</strong></td>
+                        <td>{{announce.kilometres}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showVehicleInformation ? 'table-row' : 'none' }">
+                        <td><strong>Horse Power</strong></td>
+                        <td>{{announce.horsepower}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showVehicleInformation ? 'table-row' : 'none' }">
+                        <td><strong>Model</strong></td>
+                        <td>{{announce.model}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showVehicleInformation ? 'table-row' : 'none' }">
+                        <td><strong>Car Type</strong></td>
+                        <td>{{announce.carType}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showVehicleInformation ? 'table-row' : 'none' }">
+                        <td><strong>Year</strong></td>
+                        <td>{{announce.year}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showVehicleInformation ? 'table-row' : 'none' }">
+                        <td><strong>Version</strong></td>
+                        <td>{{announce.version}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showVehicleInformation ? 'table-row' : 'none' }">
+                        <td><strong>Number of Seats</strong></td>
+                        <td>{{announce.numberSeats}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showVehicleInformation ? 'table-row' : 'none' }">
+                        <td><strong>Number Doors</strong></td>
+                        <td>{{announce.numberDoors}}</td>
+                    </tr>
+                    <tr [ngStyle]="{'display':showVehicleInformation ? 'table-row' : 'none' }">
+                        <td><strong>Seller Type</strong></td>
+                        <td>{{announce.sellerType}}</td>
+                    </tr>
+                   
+                    
+                    <tr>
+                        <td><strong>Date</strong></td>
+                        <td>{{announce.date}}</td>
+                    </tr>
+                </table> 
+
+                <div class="description">
+                    <div class="descriptionTitle">
+                        <p><strong>Description</strong></p>
+                    </div>
+        
+                    <div class="descriptionCard">
+                        <p>{{announce.description}}</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="boxEditNum" [ngStyle]="{'display':showEditNum ? 'block' : 'none' }">
+                <p>Is it necessary to validate that is your announce, so put the code we send to your email when you created the announce</p>
+                <div class="boxBtnValidate">
+                    <input type="text" placeholder="zuld339v" maxlength="8" #editNum>
+                    <button class="btnValidate" (click)="validarNumEdicion(editNum)">Validate Edit Num</button>
+                </div>
+                <p [ngStyle]="{'display':showValidErrorMSG ? 'block' : 'none' }" style="color: red;">Incorrect Validation Code, try again</p>
+            </div>
+
+            <div class="buttonsCard">
+                <button class="btnSubmit" (click)="editAnnounce();">Edit Announce</button>
+                <button class="btnCall" (click)="showPhone();"><mat-icon>call</mat-icon></button>
+                <button class="btnSubmit" (click)="postAnother();">Post Another Announce</button>
+            </div>
+            
+        </div>
+
+    </body>
+
+</html>
